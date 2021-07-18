@@ -111,4 +111,11 @@ resource "aws_elasticsearch_domain" "main" {
     subnet_ids         = var.subnet_ids
     security_group_ids = var.security_group_ids
   }
+  cognito_options {
+    enabled          = var.cognito_enabled
+    identity_pool_id = var.cognito_identity_pool_id
+    user_pool_id     = var.cognito_user_pool_id
+    role_arn         = var.cognito_role_arn
+
+  }
 }
