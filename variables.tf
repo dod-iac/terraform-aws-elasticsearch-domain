@@ -95,3 +95,15 @@ variable "cognito_role_arn" {
   description = ""
   default     = ""
 }
+
+variable "kibana_cognito_role_name" {
+  type        = string
+  description = ""
+  default     = ""
+}
+
+variable "cognito_auth_role_name" {
+  type        = string
+  description = ""
+  default     = ""
+}

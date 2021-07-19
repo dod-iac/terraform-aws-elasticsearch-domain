@@ -71,7 +71,7 @@ data "aws_iam_policy_document" "access_policies" {
     principals {
       type = "AWS"
       identifiers = [
-        "arn:aws-us-gov:iam::${data.aws_caller_identity.current.account_id}:role/${var.kibana_cognito_role.name}",
+        "arn:aws-us-gov:iam::${data.aws_caller_identity.current.account_id}:role/${var.kibana_cognito_role_name}",
         "arn:aws-us-gov:iam::${data.aws_caller_identity.current.account_id}:role/${var.cognito_auth_role_name}"
       ]
     }
