@@ -46,24 +46,36 @@ data "aws_region" "current" {}
 data "aws_partition" "current" {}
 
 data "aws_iam_policy_document" "access_policies" {
+  // statement {
+  //   actions = [
+  //     "es:*"
+  //   ]
+  //   effect = "Allow"
+  //   principals {
+  //     type        = "*"
+  //     identifiers = ["*"]
+  //   }
+  //   resources = [
+  //     format(
+  //       "arn:%s:es:%s:%s:domain/%s/*",
+  //       data.aws_partition.current.partition,
+  //       data.aws_region.current.name,
+  //       data.aws_caller_identity.current.account_id,
+  //       var.domain_name
+  //     )
+  //   ]
+  // }
   statement {
-    actions = [
-      "es:*"
-    ]
-    effect = "Allow"
+    effect  = "Allow"
+    actions = ["es:*"]
     principals {
-      type        = "*"
-      identifiers = ["*"]
+      type = "AWS"
+      identifiers = [
+        "arn:aws-us-gov:iam::${data.aws_caller_identity.current.account_id}:role/${var.kibana_cognito_role.name}",
+        "arn:aws-us-gov:iam::${data.aws_caller_identity.current.account_id}:role/${var.cognito_auth_role_name}"
+      ]
     }
-    resources = [
-      format(
-        "arn:%s:es:%s:%s:domain/%s/*",
-        data.aws_partition.current.partition,
-        data.aws_region.current.name,
-        data.aws_caller_identity.current.account_id,
-        var.domain_name
-      )
-    ]
+    resources = ["arn:aws-us-gov:es:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:domain/${var.domain_name}/*"]
   }
 }
 
