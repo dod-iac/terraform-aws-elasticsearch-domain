@@ -107,3 +107,15 @@ variable "cognito_auth_role_name" {
   description = ""
   default     = ""
 }
+
+variable "advanced_security_options_enabled" {
+  type        = bool
+  default     = false
+  description = ""
+}
+
+variable "master_user_arn" {
+  type        = string
+  default     = ""
+  description = ""
+}

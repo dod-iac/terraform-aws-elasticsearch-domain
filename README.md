@@ -69,6 +69,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_access_policies"></a> [access\_policies](#input\_access\_policies) | IAM policy document specifying the access policies for the domain. | `string` | `""` | no |
+| <a name="input_advanced_security_options_enabled"></a> [advanced\_security\_options\_enabled](#input\_advanced\_security\_options\_enabled) | n/a | `bool` | `false` | no |
 | <a name="input_automated_snapshot_start_hour"></a> [automated\_snapshot\_start\_hour](#input\_automated\_snapshot\_start\_hour) | Hour during which the service takes an automated daily snapshot of the indices in the domain. | `string` | `23` | no |
 | <a name="input_cognito_auth_role_name"></a> [cognito\_auth\_role\_name](#input\_cognito\_auth\_role\_name) | n/a | `string` | `""` | no |
 | <a name="input_cognito_enabled"></a> [cognito\_enabled](#input\_cognito\_enabled) | n/a | `bool` | `false` | no |
@@ -81,6 +82,7 @@ No modules.
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type of data nodes in the cluster. | `string` | `"r5.large.elasticsearch"` | no |
 | <a name="input_kibana_cognito_role_name"></a> [kibana\_cognito\_role\_name](#input\_kibana\_cognito\_role\_name) | n/a | `string` | `""` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | The KMS key id to encrypt the Elasticsearch domain with. If not specified then it defaults to using the aws/es service KMS key. | `string` | `""` | no |
+| <a name="input_master_user_arn"></a> [master\_user\_arn](#input\_master\_user\_arn) | n/a | `string` | `""` | no |
 | <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | List of VPC Security Group IDs to be applied to the Elasticsearch domain endpoints. If omitted, the default Security Group for the VPC will be used. | `list(string)` | `null` | no |
 | <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | List of VPC Subnet IDs for the Elasticsearch domain endpoints to be created in. | `list(string)` | `[]` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Tags applied to the KMS key. | `map(string)` | `{}` | no |

@@ -128,6 +128,11 @@ resource "aws_elasticsearch_domain" "main" {
     identity_pool_id = var.cognito_identity_pool_id
     user_pool_id     = var.cognito_user_pool_id
     role_arn         = var.cognito_role_arn
-
+  }
+  advanced_security_options {
+    enabled = var.advanced_security_options_enabled
+    master_user_options {
+      master_user_arn = var.master_user_arn
+    }
   }
 }
