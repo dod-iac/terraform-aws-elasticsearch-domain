@@ -74,3 +74,48 @@ variable "volume_type" {
   description = "The type of EBS volumes attached to data nodes."
   default     = "gp2"
 }
+
+variable "cognito_enabled" {
+  type        = bool
+  description = ""
+  default     = false
+}
+variable "cognito_identity_pool_id" {
+  type        = string
+  description = ""
+  default     = ""
+}
+variable "cognito_user_pool_id" {
+  type        = string
+  description = ""
+  default     = ""
+}
+variable "cognito_role_arn" {
+  type        = string
+  description = ""
+  default     = ""
+}
+
+variable "kibana_cognito_role_name" {
+  type        = string
+  description = ""
+  default     = ""
+}
+
+variable "cognito_auth_role_name" {
+  type        = string
+  description = ""
+  default     = ""
+}
+
+variable "advanced_security_options_enabled" {
+  type        = bool
+  default     = false
+  description = ""
+}
+
+variable "master_user_arn" {
+  type        = string
+  default     = ""
+  description = ""
+}
