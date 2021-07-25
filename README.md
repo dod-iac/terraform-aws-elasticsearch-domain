@@ -95,4 +95,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_es_arn"></a> [es\_arn](#output\_es\_arn) | n/a |
+| <a name="output_es_endpoint"></a> [es\_endpoint](#output\_es\_endpoint) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
